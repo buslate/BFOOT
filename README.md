@@ -1,17 +1,4 @@
-_G.Key = "NualSoHot"
-
-local keycheck = false
-local hwid = nil
-local hwidplr = game:GetService("RbxAnalyticsService"):GetClientId()
-
-if _G.Key == "NualSoHot" then
-    hwid = "21B9BEFC-1548-47F3-9B36-577BB765B1F9"
-    keycheck = true
-end
-
-if keycheck == true then
-    if hwidplr == hwid then
-        local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
 
 --[[SolarisLib:New({
   Name - Title of the UI <string>
@@ -665,9 +652,3 @@ sec:Button("Soru", function()
 }
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
-    else
-        print("incorrect hwid")
-    end
-    else
-        print("incorrect Key")
-end
