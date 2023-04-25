@@ -206,7 +206,7 @@ end)
 end)
 
 local toggle = sec:Toggle("FastActtck", false,"Toggle", function(f)
-for i=1,3 do
+for i=1,2 do
 print("รอบที่ "..i)
 _G.FastAttack = f
 _G.FastAttackType = "Fast"
