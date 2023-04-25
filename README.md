@@ -21,7 +21,7 @@ local toggle = sec:Toggle("Farm Lv", false,"Toggle", function(a)
 function totarget(p)
     local Distance2 = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tween_s = game:service"TweenService"
-    local info = TweenInfo.new(Distance2/350, Enum.EasingStyle.Linear)
+    local info = TweenInfo.new(Distance2/360, Enum.EasingStyle.Linear)
     local tween = tween_s:Create(game:GetService("Players").LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = p})
     tween:Play()
     if Distance2 <= 75 then
@@ -119,6 +119,22 @@ function checklevel()
         CFrameQuest = CFrame.new(-1579.31005859375, 7.38933801651001, -2985.140869140625)
         CFrameMon = CFrame.new(-1895.8349609375, 7.289072036743164, -2780.108154296875)
         CFramePuk = CFrame.new(-1882.9078369140625, 7.442545413970947, -2884.8955078125)
+    elseif lv == 300 or lv <= 324 then
+        Mon = "Military Soldier [Lv. 300]"
+        Title = "Military Soldier"
+        QuestName = "MagmaQuest"
+        QuestNumber = 1
+        CFrameQuest = CFrame.new(-5312.03369140625, 12.23593521118164, 8514.4697265625)
+        CFrameMon = CFrame.new(-5479.87939453125, 8.590673446655273, 8449.841796875)
+        CFramePuk = CFrame.new(-5525.39501953125, 46.4757194519043, 8505.9130859375)
+        elseif lv == 325 or lv <= 400 then
+        Mon = "Military Spy [Lv. 325]"
+        Title = "Military Spy"
+        QuestName = "MagmaQuest"
+        QuestNumber = 2
+        CFrameQuest = CFrame.new(-5312.03369140625, 12.23593521118164, 8514.4697265625)
+        CFrameMon = CFrame.new(-5852.55810546875, 77.251708984375, 8843.7353515625)
+        CFramePuk = CFrame.new(-5780.76220703125, 119.66664123535156, 8776.2685546875)
     end
 end
 
@@ -540,7 +556,7 @@ local p = game:GetService("Players").LocalPlayer
 ts:Teleport(game.PlaceId, p)
 end)
 sec:Button("Hop Server", function()
-  SolarisLib:Notification("NIGGA", "Wait 1")
+  SolarisLib:Notification("NIGGA", "wait 3s")
   Time = 1 -- seconds
 repeat wait() until game:IsLoaded()
 wait(Time)
