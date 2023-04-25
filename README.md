@@ -1,4 +1,17 @@
-local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
+_G.Key = "NualSoHot"
+
+local keycheck = false
+local hwid = nil
+local hwidplr = game:GetService("RbxAnalyticsService"):GetClientId()
+
+if _G.Key == "NualSoHot" then
+    hwid = "21B9BEFC-1548-47F3-9B36-577BB765B1F9"
+    keycheck = true
+end
+
+if keycheck == true then
+    if hwidplr == hwid then
+        local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
 
 --[[SolarisLib:New({
   Name - Title of the UI <string>
@@ -21,7 +34,7 @@ local toggle = sec:Toggle("Farm Lv", false,"Toggle", function(a)
 function totarget(p)
     local Distance2 = (p.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     local tween_s = game:service"TweenService"
-    local info = TweenInfo.new(Distance2/360, Enum.EasingStyle.Linear)
+    local info = TweenInfo.new(Distance2/370, Enum.EasingStyle.Linear)
     local tween = tween_s:Create(game:GetService("Players").LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = p})
     tween:Play()
     if Distance2 <= 75 then
@@ -222,7 +235,7 @@ end)
 end)
 
 local toggle = sec:Toggle("FastActtck", false,"Toggle", function(f)
-for i=1,2 do
+for i=1,4 do
 print("รอบที่ "..i)
 _G.FastAttack = f
 _G.FastAttackType = "Normal"
@@ -652,3 +665,9 @@ sec:Button("Soru", function()
 }
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
+    else
+        print("incorrect hwid")
+    end
+    else
+        print("incorrect Key")
+end
